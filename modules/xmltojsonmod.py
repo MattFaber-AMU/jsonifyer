@@ -1,16 +1,11 @@
 from xml.etree import ElementTree as ET
 
-def parsexmlfile(filepath):
-    i = 0
-    xml = ET.parse(filepath)
-    root = xml.getroot()
+def parse_xml(filepath):
+    tree = ET.parse(filepath)
+    root = tree.getroot()
+  
     for child in root: 
-        print(root.attrib, child.attrib)
-       
-        
-
-
-
-
-parsexmlfile('C:\\Users\\mfaber\\Documents\\GitHub\\jsonifyer\\modules\\testfile.xml')
+        print(child.tag, child.attrib)
+    
+parse_xml('C:\\Users\\mfaber\\Documents\\GitHub\\jsonifyer\\modules\\testfile.xml')
 
